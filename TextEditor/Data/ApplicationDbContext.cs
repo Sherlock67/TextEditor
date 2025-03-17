@@ -7,7 +7,7 @@ using TextEditor.Models;
 
 namespace TextEditor.Data
 {
-    public class ApplicationDbContext: IdentityDbContext
+    public class ApplicationDbContext: DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options)
         {

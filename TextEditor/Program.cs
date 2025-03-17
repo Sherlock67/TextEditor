@@ -1,13 +1,17 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TextEditor.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("BulkyWebConnectionString")));
 
 var app = builder.Build();
-builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("BulkyWebConnectionString")));
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

@@ -12,12 +12,12 @@ namespace TextEditor.Models
         
         public string Content { get; set; }
         
-        [Required]
+        //[Required]
 
-        public string? UserId { get; set; }
+        //public string? UserId { get; set; }
 
-        [ForeignKey("UserId")]
+        //[ForeignKey("UserId")]
 
-        public IdentityUser? User { get; set; }
+        //public IdentityUser? User { get; set; }
     }
 }
